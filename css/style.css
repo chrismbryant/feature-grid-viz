@@ -1,0 +1,16 @@
+* {
+    font-family: 
+        "Myriad Pro Light", "Nunito", "Oswald", Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: white;
+}
+
+svg {
+    display: block;
+    margin: 0 auto;
+    background-color: white;
+}
