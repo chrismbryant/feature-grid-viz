@@ -1,3 +1,6 @@
+**Note:** to run locally, use `python -m http.server`
+
+---
 # Feature Grid Visualization for Dimension-Reduced Data
 
 Dimensionality reduction algorithms such as UMAP, t-SNE, PCA, etc. provide a convenient way to view the approximate structure of a high-dimensional dataset on a flat 2D surface, but the resulting plot can be difficult to interpret. One way to qualitatively understand how the dataset's original features correspond to its overall structure is to color the reduced-dimension plot according to the value of each data point at only a single feature. By doing this one feature at a time, we can often illuminate patterns relating individual features to overall structure. When our original dataset has a moderate number of features (between 10 and 100, for example), it can be helpful to show a whole grid of plots, each colored according to a different feature.
@@ -6,7 +9,7 @@ Here, we offer an in-browser solution for performing a feature grid visualizatio
 ```
 {
   "data": [[1.01, 0.11, ..., 2.87], ..., [0.99, ..., 3.62]],
-  "data_2D": [[2.10, 0.03], ..., [1.24, 6.33]],
+  "data_2d": [[2.10, 0.03], ..., [1.24, 6.33]],
   "labels": [1, 0, 1, ... , 1, 0],
   "label_type": "binary",
   "data_tags": ["Chris", "Michiel", ..., "Vahid"]
@@ -15,7 +18,7 @@ Here, we offer an in-browser solution for performing a feature grid visualizatio
 ```
 ### JSON Fields
 * `data`: a list of the N-dimensional vectors representing each point in the original N-dimensional dataset.
-* `data_2D`: a list of the [x, y] coordinates of each point in the dimension-reduced (2D) dataset.
+* `data_2d`: a list of the [x, y] coordinates of each point in the dimension-reduced (2D) dataset.
 * `labels` (_optional_): a list of binary, integer-valued, or real-valued 1D labels corresponding to each point in the dataset. Will be ignored if not provided.
 * `label_type` (_optional_) - "binary", "categorical", or "real": a descriptor string indicating whether the supplied labels should be interpreted as booleans ("binary"), integers ("categorical"), or floats ("real"). Will default to "real" if `labels` is provided but `label_type` is not.
 * `data_tags` (_optional_): a list of additional attributes that are associated with each data point. Will be ignored if not provided.
