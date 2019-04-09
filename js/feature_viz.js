@@ -42,6 +42,7 @@ var labels;
 var label_type;
 var data_tags;
 var feature_names;
+var start_paused = true;
 
 const file = "data/random_small.json";
 
@@ -60,6 +61,7 @@ function main(error, my_data) {
   data = my_data["data"];
   data_2d = transform_data(my_data["data_2d"], width, height, padding);
   m = data_2d.length;
+  if (m > 1000) {start_paused = true} else {false};
   num_features = d3.transpose(data).length;
   throttle_mod = d3.max([1, d3.min([Math.round(m/500), 20])]);
   labels = my_data["labels"];
@@ -329,7 +331,7 @@ function change_box_style(action = "click") {
       var paused_text_fill_opacity = 0;
       var paused_rect_fill_opacity = 0;
     }
-  } else {
+  } else if (action == "right_click") {
     if (live_update == true) {
       box_opacity = default_box_opacity;
       box_stroke_opacity = 0;
@@ -430,8 +432,9 @@ function on_click() {
 function on_right_click() {
   live_update = !live_update;
   if (frozen && !live_update) {frozen = !frozen};
-  // if (live_update) {frozen = !frozen};
+  var pos = d3.mouse(this);
   change_box_style(action = "right_click");
+  move_box(pos, box_size, ease_duration);
   d3.event.preventDefault();
 }
 
@@ -443,9 +446,12 @@ function on_mouseleave() {
 }
 
 function on_mouseenter() {
+  // if (start_paused) {
+  //   on_right_click();
+  //   start_paused = false;
+  // }
   if (frozen == false) {
     var pos = d3.mouse(this);
-    console.log(pos);
     move_box(pos, box_size, 2 * ease_duration);
     zoom_grid_points(box_size);
   }
