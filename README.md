@@ -41,3 +41,5 @@ Note that `data_2D` and `data` are the only required parameters in this file.
 
 ### References
 * Magnifier: http://mark-rolich.github.io/Magnifier.js/
+* Structuring, Grouping, and Referencing in SVG: https://www.sarasoueidan.com/blog/structuring-grouping-referencing-in-svg/
+* SVG - Planning for Performance: https://oreillymedia.github.io/Using_SVG/extras/ch19-performance.html
