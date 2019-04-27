@@ -26,15 +26,14 @@ Here, we offer an in-browser solution for performing a feature grid visualizatio
 
 Note that `data_2D` and `data` are the only required parameters in this file.
 
-### UI Controls
+### UI Controls 
+_NOT FULLY IMPLEMENTED YET_
 * **Scroll wheel** | **`=` and `-`**: Scroll up/down or press `=`/`-` to increase/decrease the magnification strength (i.e. zoom in/out).
 * **Mouse** | **Arrow Keys** | **`WASD`**: Move the mouse or use the arrow keys (or `W`, `A`, `S`, and `D` keys) to move the center of magnification. The amount that the center of magnification moves is inversely proportional to the current magnification strength.
 * **`X` and `Z`**: Press `X`/`Z` to increase/decrease the magnification configuration sensitivity to keyboard inputs. A lower sensitivity means, for instance, that each press of the right arrow key moves the magnification center a smaller distance than it would with a higher sensitivity.
 * **Left-click** | **Space bar**: Left-click or press the space bar to freeze/unfreeze the magnifier configuration (center and strength). When the configuration is frozen, it cannot be changed by mouse inputs, but it can still be changed by keyboard inputs.
 * **Click button??** | **Enter**: Save images. Multiple check boxes to specify what images to save (full grid of feature cells, label cell, bounding box thumbnail), what size to save them at (large, small, both), what directory to save them in.
 * **`tab`**: Press the `tab` key to toggle between feature grid mode and single feature mode. When in single feature mode, use the right/left arrow keys to switch to the next/previous feature, or type the desired feature index into the `feature_index` text box and press "Go".
-
-
 
 ### Future UI
 * **Drag and drop**: Drag and drop data file onto screen.
